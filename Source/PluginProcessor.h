@@ -212,6 +212,7 @@ struct AudioFormatReaderSourceCreator : juce::Thread
                             rts->audioFileSourceSampleRate = reader->sampleRate;
                             
                             rts->currentAudioFileSource.reset (new AudioFormatReaderSource (reader.release(), true));
+                            rts->currentAudioFileSource->setLooping(true);
                             rts->currentAudioFile = audioURL;
                             
                             //add it to the release pool
